@@ -1,0 +1,15 @@
+[project]
+name = "peace-expense-tracker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.1.3",
+    "flask-jwt-extended>=4.7.1",
+    "flask-marshmallow>=1.4.0",
+    "flask-sqlalchemy>=3.1.1",
+    "marshmallow>=4.3.0",
+    "marshmallow-sqlalchemy>=1.5.0",
+    "pymysql>=1.1.2",
+]
