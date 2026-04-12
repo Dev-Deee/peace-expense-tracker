@@ -6,4 +6,4 @@ class Config:
         "mysql+pymysql://root:1111@localhost/peace_expense_tracker"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "your-secret-key")
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "super-secret-key-change-in-production")
