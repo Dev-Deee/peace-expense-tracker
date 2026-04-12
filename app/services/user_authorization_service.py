@@ -29,11 +29,9 @@ def register(data):
 
 def login(data):
     user = User.query.filter_by(email=data["email"]).first()
-    if not user:
-        raise NotFoundException("No account found with this email")
 
-    if not bcrypt.check_password_hash(user.password, data["password"]):
-        raise UnauthorizedException("Incorrect password")
+    if not user or not bcrypt.check_password_hash(user.password, data["password"]):
+        raise UnauthorizedException("Invalid email or password")
 
     access_token = create_access_token(identity=str(user.id))
 

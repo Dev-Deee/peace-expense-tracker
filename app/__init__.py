@@ -20,7 +20,7 @@ def create_app():
 
     from app.models import User, Expense
 
-    from app.routes.auth import auth_bp
+    from app.routes.user_authorization import auth_bp
     from app.routes.expenses import expenses_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
