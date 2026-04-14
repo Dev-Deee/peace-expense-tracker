@@ -1,7 +1,7 @@
 from app import db
 from app.models.expense import Expense
 from app.exceptions import NotFoundException, UnauthorizedException
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def create(data, user_id):
@@ -9,7 +9,7 @@ def create(data, user_id):
         amount=data["amount"],
         category=data["category"],
         description=data.get("description"),
-        date=data.get("date", datetime.utcnow()),
+        date=data.get("date", datetime.now(timezone.utc)),
         user_id=user_id
     )
     db.session.add(expense)
@@ -64,7 +64,7 @@ def delete(expense_id, user_id):
 
 
 def monthly_summary(user_id):
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     start_of_month = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
 
     expenses = Expense.query.filter(
