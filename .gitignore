@@ -1,1 +1,15 @@
 .idea/
+# added during cleanup
+*.class
+__pycache__/
+*.pyc
+target/
+out/
+.env
+.env.local
+node_modules/
+.next/
+tmp/
+*.bak
+*.iml
+.DS_Store
