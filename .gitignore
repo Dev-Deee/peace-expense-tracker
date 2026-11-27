@@ -11,4 +11,3 @@ tmp/
 *.bak
 *.iml
 .DS_Store
-config.bat
